@@ -1,0 +1,7 @@
+{
+"name": "mochaTest",
+"version": "1.0",
+"description": "Mocha test framework",
+"engines":  {
+"node": "8.12.0"
+},
