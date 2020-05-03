@@ -1,0 +1,48 @@
+const path = require('path');
+require("babel-register")({
+    presets: ["es2015"]
+});
+
+exports.config = {
+    directConnect: true,
+    specs: ["./1Test.js"],
+    framework: "mocha",
+    ignoreUncaughtExceptions: true,
+    allScriptsTimeout: 90000,
+
+    onPrepare: () => {
+        browser.ignoreSynchronization = true;
+        browser.manage().window().setSize(1440, 900);
+    },
+
+    capabilities: {
+        browserName: "chrome",
+        sharedTestFiles: false,
+
+        chromeOptions: {
+            args: [
+                "--allow-running-insecure-content",
+                "--allow-cross-origin-auth-prompt",
+                "--disable-infobars",
+                "--disable-extensions",
+                "disable-web-security",
+                //"--headless",
+                "log-path=./chromedriver.log",
+                "verbose",
+                "--window-size=1440,900"
+            ],
+            prefs: {
+                "profile.password_manager_enabled": false,
+                "credentials_enable_service": false,
+                "password_manager_enabled": false
+            }
+        }
+    },
+    mochaOpts:{
+        slow: 30000,
+        timeout: 30000000,
+        verbose: true,
+        exit: true
+    }
+
+};
