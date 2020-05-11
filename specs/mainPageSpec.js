@@ -6,7 +6,7 @@ chai.use(chaiAsPromised);
 const { expect } = chai;
 browser.ignoreSynchronization = true;
 
-describe('Non-Angular Login', () => {
+describe('Non-Angular Computer Inventor App - ', () => {
     beforeEach(async () => {
          await browser.get('http://computer-database.herokuapp.com/computers');
     });
@@ -30,7 +30,7 @@ describe('Non-Angular Login', () => {
        
     });
 
-    it.skip('should goto friend pages on successful login', async () => {
+    it.skip('adds computer to database', async () => {
         await loginPage.loginAs(userData.testUser);
 
         expect(await friendPage.loaded()).to.be.true;
