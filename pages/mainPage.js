@@ -12,13 +12,6 @@ class mainPage extends basePage {
         // get computer's by link name
         // get computer's by position in array
 
-
-        // this.passInput = element(by.name('pass'));
-        // this.loginButton = $('.login');
-        // this.errorMessage = $('div#errorMessage');
-
-        // this.url = 'angular';
-        // this.pageLoaded = this.inDom($('#page'));
     }
 
     // functions here

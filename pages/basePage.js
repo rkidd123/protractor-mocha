@@ -3,7 +3,7 @@ import {element} from "protractor";
 export default class basePage {
     constructor() {
         /**
-         * wrap this.timeout. (ms) in t-shirt sizes
+         * wrap this.timeout. (ms) 
          */
         this.timeout = {
             'xs': 420,
