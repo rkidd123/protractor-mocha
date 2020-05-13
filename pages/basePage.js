@@ -53,6 +53,11 @@ export default class basePage {
      * that are 9% more sexy, and allow us to add logging, etc...
      * @returns {ExpectedCondition}
      */
+    waitUntilClickable(el, timeOut = 5000){
+        return browser.wait(protractor.ExpectedConditions.elementToBeClickable(el),
+        timeOut, "timeOut: waiting visability of: " + el.locator());
+
+    }
     isVisible(locator) {
         return protractor.ExpectedConditions.visibilityOf(locator);
     }

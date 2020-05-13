@@ -8,6 +8,17 @@ class mainPage extends basePage {
         this.pageTitle = element(by.xpath("//a[contains(text(),'Play sample application')]"));
         this.computerNameLink = element(by.xpath("//a[contains(text(),'Computer name')]"));
         this.aceComputerLink = element(by.xpath("//a[contains(text(),'ACE')]"));
+        this.numberOfComputersFoundText = element(by.xpath("/html[1]/body[1]/section[1]/h1[1]"));
+        this.addComputerButton = element(by.xpath("//a[@id='add']"));
+        this.addComputerButton = element(by.xpath("//a[@id='add']"));
+        this.searchTextBox = element(by.xpath("//input[@id='searchbox']"));
+        this.filterByNameButtom = element(by.xpath("//input[@id='searchsubmit']"));
+        this.warningMessageText = element(by.className("alert-message warning"));
+        this.introducedLink = element(by.xpath("//a[contains(text(),'Introduced')]"));
+        this.nextPaginationLink = element(by.xpath("//a[contains(text(),'Next')]"));
+        this.discontinuedLink = element(by.xpath("//a[contains(text(),'Discontinued')]"));
+        this.companyLink = element(by.xpath("//a[contains(text(),'Company')]"));
+
 
         // get computer's by link name
         // get computer's by position in array
