@@ -13,7 +13,7 @@ exports.config = {
     directConnect: true,
     SELENIUM_PROMISE_MANAGER: false,
 
-    specs: ['specs/*Spec.js'],
+    specs: ['specs/*Spec1.js'],
     baseUrl: 'http://computer-database.herokuapp.com/computers',
     framework: "mocha",
 
