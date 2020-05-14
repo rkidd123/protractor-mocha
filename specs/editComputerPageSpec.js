@@ -13,6 +13,11 @@ describe('Non-Angular Computer Inventor App - ', () => {
     });
 
     it('deletes computer from database', async () => {
+        // add a computer to be edited
+        await browser.sleep(1000);
+        //await mainPage.addComputerButton.click();                 // added nav to function - TODO - DELETE THIS LINE AFTER TESTING
+        await editPage.addComputerAddOrCancel("add", "ace2");
+        
         // filter by newly added computer
         await mainPage.searchTextBox.click();
         await mainPage.searchTextBox.sendKeys("ace2");
@@ -34,6 +39,6 @@ describe('Non-Angular Computer Inventor App - ', () => {
         console.log("The  warningMessage " + warningMessage);
         expect(warningMessage).to.contain("Done! Computer has been deleted");
 
-        await browser.sleep(3000);
+        await browser.sleep(1000);
     });
 });

@@ -1,4 +1,7 @@
-
+/**
+ * Represents a base class of functioality for UI.
+ * @constructor
+ */
 import {element} from "protractor";
 export default class basePage {
     constructor() {

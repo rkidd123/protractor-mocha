@@ -1,3 +1,7 @@
+/**
+ * Represents the main page.
+ * @constructor
+ */
 // page is non-angular
 browser.ignoreSynchronization = true;
 import basePage from './basePage';

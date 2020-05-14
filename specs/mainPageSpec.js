@@ -22,24 +22,20 @@ describe('Non-Angular Computer Inventor App - ', () => {
 
     it('extracts numeric for number of computers', async () => {
         await browser.sleep(1000);
-
+        // TODO CANDIDATE FOR FUNCTION 
         const numberOfComputersFound = await mainPage.numberOfComputersFoundText.getText();
         console.log("\nThe numberOfComputersFound text = " + numberOfComputersFound);
-
         var str = numberOfComputersFound;
         var resNumber = str.split(" ");
         //console.log("res " + resNumber[0]);
-
         var str1 = resNumber[0];
         var str2 = " computers found";
         var computerCountStr = str1.concat(str2);
         //console.log("computerCountStr " + computerCountStr);
-
         expect(numberOfComputersFound).to.contains(computerCountStr);
-
         global.count = Number(str1)
         //console.log("the number " + count);
-
+        // TODO CANDIDATE FOR FUNCTION 
 
     });
 
@@ -51,7 +47,7 @@ describe('Non-Angular Computer Inventor App - ', () => {
         // select the pagination link
         for (var i = 0; i < (global.count / 10); i++) {
             await mainPage.nextPaginationLink.click();
-            await browser.sleep(1000);
+            await browser.sleep(500);
         }
         await browser.sleep(1000);
 

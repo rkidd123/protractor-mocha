@@ -23,7 +23,7 @@ describe('Non-Angular Computer Inventor App - Text and Display main page', () =>
         await browser.sleep(1000);
         const filterButtonText = await mainPage.filterByNameButtom.getText();
         console.log("\nThe filterButtonText = " + filterButtonText);
-        
+
         // TODO - GETTEXT NOT WORKING FOR THIS tEXT - USE JAVASCRIPT / CSS
 
     });
@@ -57,12 +57,26 @@ describe('Non-Angular Computer Inventor App - Text and Display main page', () =>
         console.log("\nThe companyLinkText = " + companyLinkText);
         expect(companyLinkText).to.contain("Company");
     });
-    it.skip('verifies pagination Display text', async () => {
+    it('verifies pagination Display text', async () => {
         // TODO USE FUNCTION TO GET NUMBER OF COMPUTERS AND CONCATE PAGINATION STRING
         await browser.sleep(1000);
+        // TODO MOVE TO FUNCTION IN MAINPAGE CLASS ////////////////////////////////////////
+        const numberOfComputersFound = await mainPage.numberOfComputersFoundText.getText();
+        console.log("\nThe numberOfComputersFound text = " + numberOfComputersFound);
+        var str = numberOfComputersFound;
+        var resNumber = str.split(" ");
+        //console.log("res " + resNumber[0]);
+        var str1 = resNumber[0];
+        var str2 = "Displaying 1 to 10 of ";
+        var computerCountStr = str2.concat(str1);
+        //console.log("computerCountStr " + computerCountStr);
+        //expect(numberOfComputersFound).to.contains(computerCountStr);
+        global.count = Number(str1)
+        //console.log("the number " + count);
+        /// TODO MOVE TO FUNCTION IN MAINPAGE CLASS ////////////////////////////////////////
         const paginationDisplayText = await mainPage.paginationDisplay.getText();
         console.log("\nThe paginationDisplayText = " + paginationDisplayText);
-        expect(paginationDisplayText).to.contain("Displaying 1 to 10 of 574");
+        expect(paginationDisplayText).to.contain(computerCountStr);
     });
     it('verifies pagination next text', async () => {
         await browser.sleep(1000);
@@ -159,7 +173,7 @@ describe('Non-Angular Computer Inventor App - Text and Display main page', () =>
 
             // ALL TEXT ON EDIT PAGE EXIST ON ADD PAGE EXCEPT THE "EDIT PAGE" TEXT AND THE DELETE THIS COMPUTER BUTTON
             it('verifies Edit computer text', async () => {
-             
+
                 await browser.sleep(1000);
                 await editPage.ARRALink.click();
                 await browser.sleep(1000);
