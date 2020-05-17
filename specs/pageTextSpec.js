@@ -105,7 +105,7 @@ describe('Non-Angular Computer Inventor App - Text and Display main page', () =>
             console.log("\nThe addComputerTextText = " + addComputerTextText);
             expect(addComputerTextText).to.contain("Add a computer");
         });
-        it('verifies Add a computer text', async () => {
+        it('verifies Computer name text', async () => {
             await browser.sleep(1000);
             // GET TEXT FORM ELEMENT ON PAGE CAUSES APP TO RETURN TO MAIN PAGE
             // MUST SELECT ADD COMPUTER BUTTON AGAIN TO GO TO ADD COMPUTER PAGE
@@ -173,7 +173,7 @@ describe('Non-Angular Computer Inventor App - Text and Display main page', () =>
 
             // ALL TEXT ON EDIT PAGE EXIST ON ADD PAGE EXCEPT THE "EDIT PAGE" TEXT AND THE DELETE THIS COMPUTER BUTTON
             it('verifies Edit computer text', async () => {
-
+                await editPage.addComputerAddOrCancel("add", "ARRA");
                 await browser.sleep(1000);
                 await editPage.ARRALink.click();
                 await browser.sleep(1000);
@@ -181,7 +181,7 @@ describe('Non-Angular Computer Inventor App - Text and Display main page', () =>
                 console.log("\nThe editPageTextText = " + editPageTextText);
                 expect(editPageTextText).to.contain("Edit computer");
             });
-            it.skip('verifies Add a computer text', async () => {
+            it('verifies Add a computer text', async () => {
                 // TODO - GETTEXT NOT WORKING FOR THIS BUTTON - USE JAVASCRIPT / CSS
                 await browser.sleep(3000);
                 // select computer

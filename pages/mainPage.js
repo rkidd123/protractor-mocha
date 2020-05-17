@@ -6,6 +6,7 @@
 browser.ignoreSynchronization = true;
 import basePage from './basePage';
 
+
 class mainPage extends basePage {
     constructor() {
         super();
@@ -18,7 +19,7 @@ class mainPage extends basePage {
         this.filterByNameButtom = element(by.xpath("//input[@id='searchsubmit']"));
         this.warningMessageText = element(by.className("alert-message warning"));
         this.introducedLink = element(by.xpath("//a[contains(text(),'Introduced')]"));
-        
+
         this.discontinuedLink = element(by.xpath("//a[contains(text(),'Discontinued')]"));
         this.companyLink = element(by.xpath("//a[contains(text(),'Company')]"));
         this.paginationDisplay = element(by.css("section:nth-child(2) div.pagination:nth-child(4) ul:nth-child(1) li.current > a:nth-child(1)"));
@@ -27,9 +28,12 @@ class mainPage extends basePage {
 
         // get computer's by link name
         // get computer's by position in array
+        // // functions here
+       
 
     }
 
-    // functions here
+
+
 }
 export default new mainPage();

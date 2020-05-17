@@ -16,7 +16,10 @@ class editPage extends basePage {
         this.compnayDropDown = element(by.xpath("//select[@id='company']"));
         this.createThisComputerButton = element(by.xpath("//input[@class='btn primary']"));
         this.ARRALink = element(by.xpath("//a[contains(text(),'ARRA')]"));
-        this.ace2Link = element(by.xpath("//a[contains(text(),'ace2')]"));
+        
+        this.aaaLink = element(by.linkText("AAA"));
+        this.ARRALink = element(by.linkText("ARRA"));
+        this.ace2Link = element(by.linkText("ace2"));
         this.ACE3Link = element(by.linkText("ACE3"));
         this.deleteThisComputerButton = element(by.xpath("//input[@class='btn danger']"));
         this.cancelButton = element(by.xpath("//a[@class='btn']"));  //BUG WHEN USING CLASSNAME

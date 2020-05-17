@@ -13,13 +13,13 @@ exports.config = {
     directConnect: true,
     SELENIUM_PROMISE_MANAGER: false,
 
-    specs: ['specs/*Spec.js'],
+    specs: ['specs/a*Spec.js'],
     baseUrl: 'http://computer-database.herokuapp.com/computers',
     framework: "mocha",
 
     onPrepare: () => {
         browser.ignoreSynchronization = true;
-        browser.manage().window().setSize(1440, 900);
+        browser.manage().window().setSize(1024, 600);
     },
 
     capabilities: {
