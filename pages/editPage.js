@@ -21,6 +21,7 @@ class editPage extends basePage {
         this.ARRALink = element(by.linkText("ARRA"));
         this.ace2Link = element(by.linkText("ace2"));
         this.ACE3Link = element(by.linkText("ACE3"));
+        this.ACE4Link = element(by.linkText("ACE4"));
         this.deleteThisComputerButton = element(by.xpath("//input[@class='btn danger']"));
         this.cancelButton = element(by.xpath("//a[@class='btn']"));  //BUG WHEN USING CLASSNAME
 
