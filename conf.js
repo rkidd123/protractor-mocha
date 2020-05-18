@@ -25,7 +25,7 @@ exports.config = {
     capabilities: {
         browserName: 'chrome',
         shardTestFiles: true,
-        maxInstances: 1,
+        maxInstances: 4,
         chromeOptions: {
             args: [
                 // disable chrome's wakiness
