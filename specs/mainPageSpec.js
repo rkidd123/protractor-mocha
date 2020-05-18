@@ -7,7 +7,7 @@ chai.use(chaiAsPromised);
 const { expect } = chai;
 browser.ignoreSynchronization = true;
 
-describe('Non-Angular Computer Inventor App - ', () => {
+describe('Non-Angular Computer Inventory App - ', () => {
     beforeEach(async () => {
         await browser.get('http://computer-database.herokuapp.com/computers');
     });
@@ -104,6 +104,31 @@ describe('Non-Angular Computer Inventor App - ', () => {
         const firstColumnValueAfterSort = await mainPage.firstColumnValue.getText();
         // console.log("firstColumnValueAfterSort " + firstColumnValueAfterSort);
         expect(firstColumnValue).to.equal(firstColumnValueAfterSort);
+    });
+    it('verifies Nothing to dislay text', async () => {
+        // select computerNameLink to sort
+        await browser.sleep(1000);
+        // delete AAA computers
+        try {
+            for (var i = 1; i < 11; i++) {
+                await mainPage.pageTitle.click();
+                await browser.sleep(1000);
+                // console.log("delete added computers");
+                await editPage.aaaLink.click();
+                await browser.sleep(1000);
+                await editPage.deleteThisComputerButton.click();
+                // console.log("delete added computers");
+            }
+        } catch (error) {
+            // console.log("NO MORE NEWLY ADDED COMPUTERS IN DB => " + error + "expected error condition");
+        }
+
+        await mainPage.searchTextBox.sendKeys("AAA");
+        await mainPage.filterByNameButtom.click();
+        const nothingToDisplayText = await mainPage.nothingToDisplayText.getText();
+        // console.log("nothingToDisplayText " + nothingToDisplayText);
+        expect(nothingToDisplayText).to.contain("Nothing to display")
+
     });
 
 });

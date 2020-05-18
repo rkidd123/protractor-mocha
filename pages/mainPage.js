@@ -28,8 +28,8 @@ class mainPage extends basePage {
         this.previousPaginationLink = element(by.xpath("//a[contains(text(),'Previous')]"));
 
         this.firstColumnValue = element(by.css("table.computers.zebra-striped:nth-child(3) tbody:nth-child(2) tr:nth-child(1) td:nth-child(1) > a:nth-child(1)"));
-        
 
+        this.nothingToDisplayText = element(by.xpath("//em[contains(text(),'Nothing to display')]"));    //em[contains(text(),'Nothing to display')]
         // get computer's by link name
         // get computer's by position in array
         // // functions here

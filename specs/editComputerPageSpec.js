@@ -7,7 +7,7 @@ chai.use(chaiAsPromised);
 const { expect } = chai;
 browser.ignoreSynchronization = true;
 
-describe('Non-Angular Computer Inventor App - ', () => {
+describe('Non-Angular Computer Inventory App - ', () => {
     beforeEach(async () => {
         await browser.get('http://computer-database.herokuapp.com/computers');
     });

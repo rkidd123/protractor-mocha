@@ -13,7 +13,7 @@ async function sleep(ms) {
 }
 
 
-describe('Non-Angular Computer Inventor App - Add Computer Page Functionality:', () => {
+describe('Non-Angular Computer y App - Add Computer Page Functionality:', () => {
      beforeEach(async () => {
           await browser.get('http://computer-database.herokuapp.com/computers');
      });

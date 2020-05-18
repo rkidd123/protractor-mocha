@@ -7,7 +7,7 @@ chai.use(chaiAsPromised);
 const { expect } = chai;
 browser.ignoreSynchronization = true;
 
-describe('Non-Angular Computer Inventor App - Text and Display main page', () => {
+describe('Non-Angular Computer Inventory App - Text and Display main page', () => {
     beforeEach(async () => {
         await browser.get('http://computer-database.herokuapp.com/computers');
     });
@@ -92,7 +92,7 @@ describe('Non-Angular Computer Inventor App - Text and Display main page', () =>
         expect(previousPaginationLinkText).to.contain("← Previous");
     });
 
-    describe('Non-Angular Computer Inventor App - - Text and Display add computer page', () => {
+    describe('Non-Angular Computer Inventory App - - Text and Display add computer page', () => {
         beforeEach(async () => {
             await browser.get('http://computer-database.herokuapp.com/computers');
         });
@@ -166,7 +166,7 @@ describe('Non-Angular Computer Inventor App - Text and Display main page', () =>
             // console.log("\nThe cancelButtonText = " + cancelButtonText);
             expect(cancelButtonText).to.contain("Cancel");
         });
-        describe('Non-Angular Computer Inventor App - - Text and Display edit computer page', () => {
+        describe('Non-Angular Computer Inventory App - - Text and Display edit computer page', () => {
             beforeEach(async () => {
                 await browser.get('http://computer-database.herokuapp.com/computers');
             });
