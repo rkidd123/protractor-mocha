@@ -6,6 +6,7 @@
 // page is non-angular
 browser.ignoreSynchronization = true;
 import basePage from './basePage';
+import { element } from 'protractor';
 
 class editPage extends basePage {
     constructor() {
@@ -22,16 +23,18 @@ class editPage extends basePage {
         this.ace2Link = element(by.linkText("ace2"));
         this.ACE3Link = element(by.linkText("ACE3"));
         this.ACE4Link = element(by.linkText("ACE4"));
-        this.deleteThisComputerButton = element(by.xpath("//input[@class='btn danger']"));
+        // this.deleteThisComputerButton = element(by.xpath("//input[@class='btn danger']"));
+        this.deleteThisComputerButton = element(by.className("btn danger"));
         this.cancelButton = element(by.xpath("//a[@class='btn']"));  //BUG WHEN USING CLASSNAME
-
         this.addComputerText = element(by.xpath("//h1[contains(text(),'Add a computer')]"));
         this.computerNameText = element(by.xpath("//label[contains(text(),'Computer name')]"));
         this.introducedDateText = element(by.xpath("//label[contains(text(),'Introduced date')]"));
         this.discontinuedDateText = element(by.xpath("//label[contains(text(),'Discontinued date')]"));
         this.companyText = element(by.xpath("//label[contains(text(),'Company')]"));
-
         this.editPageText = element(by.xpath("//h1[contains(text(),'Edit computer')]"));
+        this.requiredText = element(by.xpath("//span[contains(text(),'Required')]"));
+        this.introducedDateFormatText = element(by.xpath("//div[2]//div[1]//span[1]"));
+        this.discontinuedDateFormatText = element(by.xpath("//div[3]//div[1]//span[1]"));
     }
 
     async selectOptions(select, optionName) {

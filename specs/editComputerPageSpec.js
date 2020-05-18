@@ -12,7 +12,7 @@ describe('Non-Angular Computer Inventor App - ', () => {
         await browser.get('http://computer-database.herokuapp.com/computers');
     });
 
-    it('deletes computer from database', async () => {
+    it('verified computer deleted  from DB', async () => {
         // add a computer to be edited
         await browser.sleep(1000);
         //await mainPage.addComputerButton.click();                 // added nav to function - TODO - DELETE THIS LINE AFTER TESTING

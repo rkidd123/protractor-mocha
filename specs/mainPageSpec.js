@@ -15,16 +15,15 @@ describe('Non-Angular Computer Inventor App - ', () => {
     it('verifies page title', async () => {
         await browser.sleep(1000);
         const pageTitle = await mainPage.pageTitle.getText();
-        console.log("\nThe page text = " + pageTitle);
+        //console.log("\nThe page text = " + pageTitle);
         expect(pageTitle).to.contain("Play sample application — Computer database");
 
     });
-
     it('extracts numeric for number of computers', async () => {
         await browser.sleep(1000);
         // TODO CANDIDATE FOR FUNCTION 
         const numberOfComputersFound = await mainPage.numberOfComputersFoundText.getText();
-        console.log("\nThe numberOfComputersFound text = " + numberOfComputersFound);
+        // console.log("\nThe numberOfComputersFound text = " + numberOfComputersFound);
         var str = numberOfComputersFound;
         var resNumber = str.split(" ");
         //console.log("res " + resNumber[0]);
@@ -38,55 +37,73 @@ describe('Non-Angular Computer Inventor App - ', () => {
         // TODO CANDIDATE FOR FUNCTION 
 
     });
-
-    it('selects pagination and sort links', async () => {
+    it('verifies pagination and next and previous links', async () => {
+        // select the pagination link
+        for (var i = 0; i < ((global.count / 10) - 1); i++) {
+            const firstColumnValue = await mainPage.firstColumnValue.getText();
+            // console.log("firstColumnValue " + firstColumnValue);
+            await mainPage.nextPaginationLink.click();
+            await browser.sleep(250);
+            const firstColumnValueAfterPagination = await mainPage.firstColumnValue.getText();
+            // console.log("firstColumnValueAfterPagination " + firstColumnValueAfterPagination);
+            expect(firstColumnValue).to.not.equal(firstColumnValueAfterPagination);
+        }
+        for (var i = 0; i < ((global.count / 10) - 1); i++) {
+            const firstColumnValue = await mainPage.firstColumnValue.getText();
+            await mainPage.previousPaginationLink.click();
+            await browser.sleep(250);
+            const firstColumnValueAfterPagination = await mainPage.firstColumnValue.getText();
+            // console.log("firstColumnValueAfterPagination " + firstColumnValueAfterPagination);
+            expect(firstColumnValue).to.not.equal(firstColumnValueAfterPagination);
+        }
+    });
+    it('verifies Computper name link', async () => {
         // select computerNameLink to sort
+        await browser.sleep(1000);
+        const firstColumnValue = await mainPage.firstColumnValue.getText();
+        // console.log("firstColumnValue " + firstColumnValue);
+        await mainPage.nextPaginationLink.click();
+        await browser.sleep(1000);
+        const firstColumnValueAfterPagination = await mainPage.firstColumnValue.getText();
+        // console.log("firstColumnValueAfterPagination " + firstColumnValueAfterPagination);
+        expect(firstColumnValue).to.not.equal(firstColumnValueAfterPagination);
         await mainPage.computerNameLink.click();
         await browser.sleep(1000);
-
-        // select the pagination link
-        for (var i = 0; i < (global.count / 10); i++) {
-            await mainPage.nextPaginationLink.click();
-            await browser.sleep(500);
-        }
+        const firstColumnValueAfterSort = await mainPage.firstColumnValue.getText();
+        // console.log("firstColumnValueAfterSort " + firstColumnValueAfterSort);
+        expect(firstColumnValue).to.equal(firstColumnValueAfterSort);
+    });
+    it('verifies Introduced name link', async () => {
+        // select computerNameLink to sort
         await browser.sleep(1000);
-
-        // select 
+        const firstColumnValue = await mainPage.firstColumnValue.getText();
+        // console.log("firstColumnValue " + firstColumnValue);
+        await mainPage.nextPaginationLink.click();
+        await browser.sleep(1000);
+        const firstColumnValueAfterPagination = await mainPage.firstColumnValue.getText();
+        // console.log("firstColumnValueAfterPagination " + firstColumnValueAfterPagination);
+        expect(firstColumnValue).to.not.equal(firstColumnValueAfterPagination);
         await mainPage.introducedLink.click();
         await browser.sleep(1000);
-
-        // select the pagination link
+        const firstColumnValueAfterSort = await mainPage.firstColumnValue.getText();
+        // console.log("firstColumnValueAfterSort " + firstColumnValueAfterSort);
+        expect(firstColumnValue).to.equal(firstColumnValueAfterSort);
+    });
+    it('verifies Discontinue name link', async () => {
+        // select computerNameLink to sort
+        await browser.sleep(1000);
+        const firstColumnValue = await mainPage.firstColumnValue.getText();
+        // console.log("firstColumnValue " + firstColumnValue);
         await mainPage.nextPaginationLink.click();
         await browser.sleep(1000);
-
-        // select the discontinued link
+        const firstColumnValueAfterPagination = await mainPage.firstColumnValue.getText();
+        // console.log("firstColumnValueAfterPagination " + firstColumnValueAfterPagination);
+        expect(firstColumnValue).to.not.equal(firstColumnValueAfterPagination);
         await mainPage.discontinuedLink.click();
         await browser.sleep(1000);
-
-        // select the pagination link
-        await mainPage.nextPaginationLink.click();
-        await browser.sleep(1000);
-
-        // slect the company link
-        await mainPage.companyLink.click();
-        await browser.sleep(1000);
-
-        // select the pagination link
-        await mainPage.nextPaginationLink.click();
-        await browser.sleep(1000);
-
-        // select computerNameLink to sort
-        await mainPage.computerNameLink.click();
-        await browser.sleep(1000);
-
-        // protractor.Key.TAB does not work on this page
-        // await editPage.computerNameTextBox.sendKeys("protractor.Key.TAB");
-        // get text does not work on editPage
-        // const computerNameOnEditPage = await editPage.computerNameTextBox.getText();
-        // console.log("\nthe computerNameOnEditPage " + computerNameOnEditPage);
-
-        await browser.sleep(3000);
-
-
+        const firstColumnValueAfterSort = await mainPage.firstColumnValue.getText();
+        // console.log("firstColumnValueAfterSort " + firstColumnValueAfterSort);
+        expect(firstColumnValue).to.equal(firstColumnValueAfterSort);
     });
+
 });

@@ -5,6 +5,7 @@
 // page is non-angular
 browser.ignoreSynchronization = true;
 import basePage from './basePage';
+import { element } from 'protractor';
 
 
 class mainPage extends basePage {
@@ -25,6 +26,9 @@ class mainPage extends basePage {
         this.paginationDisplay = element(by.css("section:nth-child(2) div.pagination:nth-child(4) ul:nth-child(1) li.current > a:nth-child(1)"));
         this.nextPaginationLink = element(by.xpath("//a[contains(text(),'Next')]"));
         this.previousPaginationLink = element(by.xpath("//a[contains(text(),'Previous')]"));
+
+        this.firstColumnValue = element(by.css("table.computers.zebra-striped:nth-child(3) tbody:nth-child(2) tr:nth-child(1) td:nth-child(1) > a:nth-child(1)"));
+        
 
         // get computer's by link name
         // get computer's by position in array
