@@ -9,7 +9,7 @@
     "prepare": "node_modules/.bin/webdriver-manager update",
     "update": "node_modules/.bin/webdriver-manager update",
     "test": "protractor conf.js",
-    "test:single": "protractor conf.js --specs" 
+    "test:single": "protractor conf.js --specs"
   },
   "repository": {
     "type": "git",
