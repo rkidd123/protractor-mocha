@@ -38,11 +38,14 @@
     "jasmine-spec-reporter": "4.2.1",
     "mocha": "7.1.2",
     "protractor": "^7.0.0",
+    "supertest": "4.0.2",
+    "xml2js": "^0.4.23",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.24.1",
     "protractor-flake": "4.0.0"
   },
   "devDependencies": {
-    "babel-preset-es2015": "^6.24.1",
-    "babel-register": "^6.24.1",
-    "eslint": "7.4.0"
+    "eslint": "^7.4.0"
   }
 }
